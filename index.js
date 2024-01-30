@@ -84,3 +84,22 @@ $(document).ready(function () {
   }
 })
 
+
+let sections = document.querySelectorAll('section');
+let navLinks = document.querySelectorAll('aside nav a');
+ window.onscroll = () => {
+   let scroll = window.scrollY;
+   for (let i = 0; i < sections.length-1; i++) {
+     let section = sections[i];
+     let sectionTop = section.offsetTop -150;
+     let sectionHeight = section.offsetHeight;
+     if (scroll >= sectionTop && scroll <= sectionTop + sectionHeight) {
+       navLinks[i].classList.add('active');
+       
+     } else {
+       navLinks[i].classList.remove('active');
+       
+     }
+   }
+ }
+

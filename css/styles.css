@@ -117,7 +117,7 @@ header{
     text-decoration: none;
     color: #908096;
 }
-.nav-links a:hover{
+.nav-links a:hover, .nav-links a.active{
     color: #08fdd8;
 }
 .nav-links a::before{
@@ -660,6 +660,7 @@ header{
 /* Contact Section Starts Here */
 
 #section-contact {
+    height: 80vh;
     padding: 5rem 0 5rem 1.5rem;
     position: relative;
 }
@@ -815,10 +816,11 @@ header{
     /* part 4 media quries start here */
 
     #section-contact{
-        height: 50vh;
+        height: 80vh;
         width: 85%;
         margin: 0 30px 0 auto;
         display: flex;
+        justify-content: center;
         flex-direction: column;
     }
 
@@ -893,4 +895,36 @@ header{
     h1 {
       font-size:24px;
     }
+  }
+
+
+  /* Text animation inn the beginning */
+  @keyframes rubberBand {
+    0% {
+      transform: scale3d(1, 1, 1);
+    }
+    20% {
+      transform: scale3d(1.4, 0.55, 1);
+    }
+    40% {
+      transform: scale3d(0.75, 1.25, 1);
+    }
+    60% {
+      transform: scale3d(1.25, 0.85, 1);
+    }
+    80% {
+      transform: scale3d(0.9, 1.05, 1);
+    }
+    100% {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+  .rubber {
+    display: inline-block;
+    transform-origin: center;
+  }
+  
+  .rubber:hover {
+    animation: rubberBand 1s ;
   }
